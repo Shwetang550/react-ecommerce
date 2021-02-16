@@ -14,21 +14,18 @@ const Body = () => {
                 />
             
             <div className="body__row">
-                {/* Product */}
-                    <Product />
-                    <Product />
-                    <Product />
-                {/* Product */}
+                    <Product rating={4} />
+                    <Product rating={3} />
             </div>
 
             <div className="body__row">
-                {/* Product */}
-                {/* Product */}
-                {/* Product */}
+                    <Product rating={5} />
+                    <Product rating={1} />
+                    <Product rating={2} />
             </div>
 
             <div className="body__row">
-                {/* Product */}
+                <Product rating={4} />
             </div>
             
             </div>  

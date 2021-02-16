@@ -1,7 +1,7 @@
 import React from 'react';
 import './Product.css';
 
-const Product = () => {
+const Product = ({ rating }) => {
     return ( 
         <div className="product">
             <div className="product__info">
@@ -11,7 +11,11 @@ const Product = () => {
                     <strong>150</strong>
                 </p>
                 
-                <div className="product__rating">⭐️⭐️⭐️</div>
+                <div className="product__rating">
+                    {
+                        Array(rating).fill().map((_, i) => <p>⭐️</p>)
+                    }
+                </div>
             
             </div>
 
