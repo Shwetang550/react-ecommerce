@@ -6,15 +6,18 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { TextField } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className="header">
-            <img
-                className="header__logo"
-                src={Logo}
-                alt="digi-sell logo"
-            />
+            <Link to="/">
+                <img
+                    className="header__logo"
+                    src={Logo}
+                    alt="digi-sell logo"
+                />
+            </Link>
             
             <div className="header__search">
                 <input
@@ -37,10 +40,13 @@ const Header = () => {
                 <div className="header__navIcon">
                     Orders
                 </div>
-                <div className="header__navIcon header__cart">
-                    <ShoppingCartOutlinedIcon fontSize="large" />
-                    <span className="header__cartCount">0</span>
-                </div>
+
+                <Link to="/checkout">
+                    <div className="header__navIcon header__cart">
+                            <ShoppingCartOutlinedIcon fontSize="large" />
+                            <span className="header__cartCount">0</span>
+                    </div>
+                </Link>
             </div>
         </div>
     )
