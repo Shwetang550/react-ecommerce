@@ -4,11 +4,12 @@ import Logo from '../images/digiSell.png';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import { TextField } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
 
 const Header = () => {
+    const [{ cart }, dispatch] = useStateValue();
+
     return (
         <div className="header">
             <Link to="/">
@@ -44,7 +45,7 @@ const Header = () => {
                 <Link to="/checkout">
                     <div className="header__navIcon header__cart">
                             <ShoppingCartOutlinedIcon fontSize="large" />
-                            <span className="header__cartCount">0</span>
+                            <span className="header__cartCount">{cart ? cart.length: ""}</span>
                     </div>
                 </Link>
             </div>
