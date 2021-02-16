@@ -49,7 +49,7 @@
 
 .header__cartCount {
     align-items: flex-start;
-    font-size: small;
+    /* font-size: large; */
     color: #62d2a2;
     font-weight: 700;
 }
