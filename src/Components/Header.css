@@ -16,15 +16,23 @@
 
 .header__search {
     display: flex;
+    flex: 2;
     margin: 0 10px 0 10px;
 }
 
 .header__searchInput {
-    /* width: 50%; */
+    flex: 1;
+}
+
+.header__searchIcon {
+    background-color: #62d2a2 !important;
+    /* padding: 0 5px !important; */
 }
 
 .header__nav {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .header__navIcon {

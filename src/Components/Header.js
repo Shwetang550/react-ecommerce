@@ -1,36 +1,42 @@
 import React from 'react';
 import './Header.css';
 import Logo from '../images/digiSell.png';
+import SearchIcon from '@material-ui/icons/Search';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import Button from '@material-ui/core/Button';
 
 const Header = () => {
     return (
         <div className="header">
-            {/* Logo */}
             <img
                 className="header__logo"
                 src={Logo}
+                alt="digi-sell logo"
             />
             
-            {/* Search (bar + icon) */}
             <div className="header__search">
                 <input
                     className="header__searchInput"
                     type="text"
                 />
-                {/* search logo */}
-                <button>Search</button>
+
+                <Button variant="contained" className="header__searchIcon">
+                    <SearchIcon />
+                </Button>
             </div>
             
-            {/* navIcons */}
             <div className="header__nav">
                 <div className="header__navIcon">
                     Sign In
                 </div>
                 <div className="header__navIcon">
+                    About Us
+                </div>
+                <div className="header__navIcon">
                     Orders
                 </div>
                 <div className="header__navIcon">
-                    Bucket
+                    <ShoppingCartOutlinedIcon />
                 </div>
             </div>
         </div>
