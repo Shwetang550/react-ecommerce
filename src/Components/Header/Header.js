@@ -1,11 +1,11 @@
 import React from 'react';
 import './Header.css';
-import Logo from '../images/digiSell.png';
+import Logo from '../../images/digiSell.png';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import { useStateValue } from '../StateProvider';
+import { useStateValue } from '../../StateProvider';
 
 const Header = () => {
     const [{ cart }, dispatch] = useStateValue();

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Body.css';
-import Home from '../images/img-home.jpg';
-import Product from './Product';
+import Home from '../../images/img-home.jpg';
+import Product from '../Product/Product';
 
 const Body = () => {
     return ( 
