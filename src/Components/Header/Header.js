@@ -32,9 +32,11 @@ const Header = () => {
             </div>
             
             <div className="header__nav">
-                <div className="header__navIcon">
-                    Sign In
-                </div>
+                <Link to="/sign-in">
+                    <div className="header__navIcon">
+                        Sign In
+                    </div>
+                </Link>
                 <div className="header__navIcon">
                     About Us
                 </div>
