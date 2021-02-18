@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './SignIn.css';
 import Logo from '../../images/digiSell.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { auth } from '../../firebase';
+import userEvent from '@testing-library/user-event';
 
 const SignIn = () => {
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -11,12 +14,27 @@ const SignIn = () => {
         e.preventDefault();
 
         // User Authentication here...
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then(auth => {
+                history.push('/')
+            })
+            .catch( error => alert(error.message))
     };
 
     const handleRegister = (e) => {
         e.preventDefault();
 
         // Register Auth...
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .then((auth) => {
+                //it successfully created new user with email & password
+                if (auth) {
+                    history.push('/')
+                }
+            })
+            .catch( error => alert(error.message))
     }
 
     return ( 
