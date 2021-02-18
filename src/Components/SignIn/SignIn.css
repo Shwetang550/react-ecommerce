@@ -44,3 +44,7 @@
     margin: auto;
     background-color: #62D2A2;
 }
+
+.signIn__createBtn {
+    background-color: #eee;
+}

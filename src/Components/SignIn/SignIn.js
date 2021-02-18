@@ -13,6 +13,12 @@ const SignIn = () => {
         // User Authentication here...
     };
 
+    const handleRegister = (e) => {
+        e.preventDefault();
+
+        // Register Auth...
+    }
+
     return ( 
         <div className="signIn">
             <Link to="/">
@@ -49,7 +55,20 @@ const SignIn = () => {
                     <button
                         className="signIn__btn"
                         onClick={handleSignIn}
-                    >Sign-in</button>
+                    >
+                        Sign-in
+                    </button>
+
+                    <br />
+                    <br />
+                    <h4>New User ?</h4>
+
+                    <button
+                        className="signIn__createBtn"
+                        onClick={handleRegister}
+                    >
+                        Create an Account
+                    </button>
                 </form>
             </div>
         </div>
