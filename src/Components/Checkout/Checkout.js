@@ -18,7 +18,7 @@ const Checkout = () => {
                 />
 
             <div>
-                <h3>Hey, {user.email}</h3>        
+                <h3>Hey, { user ? user.email: "Guest"}</h3>        
                 <h2 className="checkout__title">
                         Your Shopping Basket
                 </h2>
