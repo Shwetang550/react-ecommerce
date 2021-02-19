@@ -1,7 +1,8 @@
 .checkout {
     display: flex;
     padding: 20px;
-    background-color: white;
+    background-color: #212121;
+    color: #ffffff;
     height: max-content;
 }
 
@@ -13,7 +14,7 @@
 .checkout__title {
     padding: 10px;
     margin-right: 10px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 2px solid lightgray;
 }
 
 .checkout__ad {

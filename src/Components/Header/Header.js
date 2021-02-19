@@ -10,7 +10,6 @@ import { auth } from '../../firebase';
 
 const Header = () => {
     const [{ cart, user }, dispatch] = useStateValue();
-    // console.log(user);
 
     const handleSignIn = () => { 
         if (user) {
