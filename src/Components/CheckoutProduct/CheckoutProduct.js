@@ -3,7 +3,7 @@ import './CheckoutProduct.css';
 import { useStateValue } from '../../StateProvider';
 
 const CheckoutProduct = ({ id, image, title, price, rating }) => {
-    const [{ cart }, dispatch] = useStateValue();
+    const [{ cart, user }, dispatch] = useStateValue();
 
     const handleDelete = () => { 
         dispatch({

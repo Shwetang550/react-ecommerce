@@ -6,9 +6,10 @@ import Checkout from './Components/Checkout/Checkout';
 import SignIn from './Components/SignIn/SignIn';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
+import Payment from './Components/Payment/Payment';
 
 function App() {
-  const [{ }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
 
   useEffect(() => { 
     auth.onAuthStateChanged(authUser => {
@@ -43,8 +44,12 @@ function App() {
             <Header />
             <Checkout />
           </Route>
-          <Route path="/sign-in">
+          <Route path="/sign-in" exact>
             <SignIn />
+          </Route>
+          <Route path="/payment" exact>
+            <Header />
+            <Payment />
           </Route>
         </Switch>
       </div>
