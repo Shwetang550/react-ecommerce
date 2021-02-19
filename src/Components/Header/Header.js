@@ -4,17 +4,19 @@ import Logo from '../../images/digiSell.png';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
 import { auth } from '../../firebase';
 
 const Header = () => {
+    const history = useHistory();
     const [{ cart, user }, dispatch] = useStateValue();
 
     const handleSignIn = () => { 
         if (user) {
             auth.signOut();
         }
+        history.push(!user && "/sign-in");
     };
 
     return (
@@ -43,11 +45,9 @@ const Header = () => {
                         <span>Hello {user ? user.email : 'Guest'}</span>
                 </div>
                 
-                <Link to={!user && "/sign-in"}>
-                    <div className="header__navIcon" onClick={handleSignIn} >
-                        {user ? 'Sign Out' : 'Sign In'}
-                    </div>
-                </Link>
+                <div className="header__navIcon" onClick={handleSignIn} >
+                    {user ? 'Sign Out' : 'Sign In'}
+                </div>
 
                 <div className="header__navIcon">
                     About Us
@@ -57,12 +57,13 @@ const Header = () => {
                     Orders
                 </div>
 
-                <Link to="/checkout">
-                    <div className="header__navIcon header__cart">
-                            <ShoppingCartOutlinedIcon fontSize="large" />
-                            <span className="header__cartCount">{cart ? cart.length: ""}</span>
-                    </div>
-                </Link>
+                <div
+                    className="header__navIcon header__cart"
+                    onClick={(e) => history.push('/checkout')}
+                >
+                        <ShoppingCartOutlinedIcon fontSize="large" />
+                        <span className="header__cartCount">{cart ? cart.length: ""}</span>
+                </div>
             </div>
         </div>
     )
