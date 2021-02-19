@@ -42,16 +42,18 @@ const Header = () => {
             <div className="header__nav">
                 <div className="header__navIcon" style={{ cursor: 'default'}}>
                         <span>Hello {user ? user.email : 'Guest'}</span>
-                    </div>
+                </div>
+                
                 <Link to={!user && "/sign-in"}>
-                    
                     <div className="header__navIcon" onClick={handleSignIn} >
                         {user ? 'Sign Out' : 'Sign In'}
                     </div>
                 </Link>
+
                 <div className="header__navIcon">
                     About Us
                 </div>
+                
                 <div className="header__navIcon">
                     Orders
                 </div>

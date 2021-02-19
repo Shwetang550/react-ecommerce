@@ -19,7 +19,9 @@ const SignIn = () => {
             .then(auth => {
                 history.push('/')
             })
-            .catch( error => alert(error.message))
+            .catch(error => {
+                alert("New User!!!\nPlease create an account...")
+            })
     };
 
     const handleRegister = (e) => {
