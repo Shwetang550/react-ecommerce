@@ -2,7 +2,7 @@ import React from 'react';
 import './CheckoutProduct.css';
 import { useStateValue } from '../../StateProvider';
 
-const CheckoutProduct = ({ id, image, title, price, rating }) => {
+const CheckoutProduct = ({ id, image, title, price, rating, hideButton }) => {
     const [{ cart, user }, dispatch] = useStateValue();
 
     const handleDelete = () => { 
@@ -33,13 +33,16 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
                         Array(rating).fill().map( (_, i) => <p key={i}>⭐️</p>)
                     }
                 </div>
-
-                <button
-                    onClick={handleDelete}
-                    style={{ cursor: 'pointer' }}
-                >
-                    Remove from Cart
-                </button>
+                {
+                    !hideButton && (
+                        <button
+                            onClick={handleDelete}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Remove from Cart
+                        </button>
+                    )
+                }
             </div>
         </div>
     );

@@ -7,6 +7,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import axios from '../../axios';
 import { cartTotal } from '../../reducer';
+import { db } from '../../firebase';
 
 const Payment = () => {
     const history = useHistory();
@@ -48,6 +49,12 @@ const Payment = () => {
             }
         }).then(({ paymentIntent }) => {
             // paymentIntent = payment confirmation
+
+            db.collection('users').doc(user.id).collection('orders').doc(paymentIntent.id).set({
+                cart: cart,
+                amount: paymentIntent.amount,
+                created: paymentIntent.created
+            })
 
             setSucceeded(true);
             setError(null);

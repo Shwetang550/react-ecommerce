@@ -53,7 +53,10 @@ const Header = () => {
                     About Us
                 </div>
                 
-                <div className="header__navIcon">
+                <div
+                    className="header__navIcon"
+                    onClick={ (e) => history.push('/orders')}
+                >
                     Orders
                 </div>
 
